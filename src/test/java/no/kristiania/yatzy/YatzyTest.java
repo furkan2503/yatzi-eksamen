@@ -17,8 +17,8 @@ public class YatzyTest {
 
     @Test
     void shouldScoreTwo() {
-        assertEquals(4, yatzyGame.score(YatzyCategory.TWO, new int[] {1, 1, 2, 2, 1}));
-        assertEquals(2, yatzyGame.score(YatzyCategory.TWO, new int[] {6, 5, 2, 1, 1}));
+        assertEquals(4, yatzyGame.score(YatzyCategory.TWOS, new int[] {1, 1, 2, 2, 1}));
+        assertEquals(2, yatzyGame.score(YatzyCategory.TWOS, new int[] {6, 5, 2, 1, 1}));
 
     }
 }
