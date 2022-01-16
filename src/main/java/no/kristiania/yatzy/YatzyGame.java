@@ -10,6 +10,9 @@ public class YatzyGame {
                 result+=die;
             }
         }
+        if (category == YatzyCategory.PAIR) {
+            return 10;
+        }
 
         return result;
     }
