@@ -10,26 +10,31 @@ public class YatzyGame {
                 result+=die;
             }
         }
-        if (category == YatzyCategory.PAIR) {
-            int[] frequencies = new int[7];
-            for (int die : dice) {
-                frequencies[die]++;
-            }
-            for (int value = frequencies.length - 1; value >= 0; value--) {
-                if (frequencies[value] == 2){
-                    return value*2;
-                }
-            }
-
-            for (int i = 0; i < dice.length; i++) {
-                for (int j = 0; j < dice.length; j++) {
-                    if (i !=j && dice[i] == dice[j]) {
-                        return dice[i]*2;
-                    }
-                }
-            }
-            return 10;
+        int[] frequencies = new int[7];
+        for (int die : dice) {
+            frequencies[die]++;
         }
+        if (category == YatzyCategory.PAIR) {
+            for (int value = frequencies.length - 1; value >= 0; value--) {
+                if (frequencies[value] == 2) {
+                    return value * 2;
+                }
+            }
+        }
+
+            if (category == YatzyCategory.THREE_OF_A_KIND) {
+            for (int value = frequencies.length - 1; value >= 0; value--) {
+                if (frequencies[value] == 3){
+                    return value*3;
+                }
+            }
+        }
+            if (category == YatzyCategory.ONES){
+                return frequencies[1];
+            }
+            if (category == YatzyCategory.TWOS){
+                return frequencies[2];
+            }
 
         return result;
     }
